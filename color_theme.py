@@ -10,6 +10,7 @@ Based on https://github.com/JulianEberius/SublimePythonIDE
 import codecs
 import os
 import sys
+
 from xml.etree import ElementTree
 
 try:
@@ -192,12 +193,12 @@ def update_color_scheme(settings):
 
         # ST does not expect platform specific paths here, but only
         # forward-slash separated paths relative to "Packages"
-        new_theme_setting = '/'.join(['Packages', 'User', new_name])
-        prefs.set('color_scheme', new_theme_setting)
-        sublime.save_settings('Preferences.sublime-settings')
+        # new_theme_setting = '/'.join(['Packages', 'User', new_name])
+        # prefs.set('color_scheme', new_theme_setting)
+        # sublime.save_settings('Preferences.sublime-settings')
 
     # run async
-    if sublime3:
-        sublime.set_timeout_async(generate_color_scheme_async, 0)
-    else:
-        sublime.set_timeout(generate_color_scheme_async, 100)
+    # if sublime3:
+    #     sublime.set_timeout_async(generate_color_scheme_async, 0)
+    # else:
+    #     sublime.set_timeout(generate_color_scheme_async, 100)
